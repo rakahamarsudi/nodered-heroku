@@ -228,9 +228,7 @@
             "0c979bf8879c11e2"
         ],
         "x": 54,
-        "y": 379,
-        "w": 572,
-        "h": 82
+        "y": 379
     },
     {
         "id": "7e6baf98.69239",
@@ -3714,8 +3712,8 @@
         "passThrough": false,
         "errorOutput": false,
         "outputs": 0,
-        "x": 1430,
-        "y": 360,
+        "x": 1250,
+        "y": 320,
         "wires": []
     },
     {
@@ -3732,7 +3730,8 @@
         "y": 300,
         "wires": [
             [
-                "ecfa2ae6fc0f10be"
+                "ecfa2ae6fc0f10be",
+                "ec22b0959c46e4c5"
             ]
         ]
     },
@@ -3760,17 +3759,26 @@
             },
             {
                 "type": "command",
-                "command": "/get_relationship"
+                "command": "/get_relation"
             },
             {
                 "type": "command",
-                "command": "/get_about-you"
+                "command": "/get_about"
             },
             {
-                "type": "catchAll"
+                "type": "command",
+                "command": "/about"
+            },
+            {
+                "type": "command",
+                "command": "/saran"
+            },
+            {
+                "type": "command",
+                "command": "/kirim_saran"
             }
         ],
-        "outputs": 7,
+        "outputs": 9,
         "x": 490,
         "y": 300,
         "wires": [
@@ -3798,6 +3806,13 @@
             ],
             [
                 "f38cb07da7d914d9"
+            ],
+            [
+                "a19e8127ce1912a3"
+            ],
+            [
+                "dd7a39c88ba438b1",
+                "026b2914b29c0d4d"
             ]
         ]
     },
@@ -3806,7 +3821,7 @@
         "type": "file in",
         "z": "6c2a20878ada2fb9",
         "name": "qst-about_you",
-        "filename": "C:\\Users\\User\\Documents\\RAKA\\rekata_questions\\about_you.txt",
+        "filename": "./rekata_questions/about_you.txt",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -3826,7 +3841,7 @@
         "type": "debug",
         "z": "6c2a20878ada2fb9",
         "name": "Read Output",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3834,8 +3849,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1290,
-        "y": 140,
+        "x": 470,
+        "y": 160,
         "wires": []
     },
     {
@@ -3875,27 +3890,35 @@
         "items": [
             {
                 "command": "/get_all",
-                "description": "Seluruh topik"
+                "description": " - Seluruh topik"
             },
             {
                 "command": "/get_life",
-                "description": "Topik LIFE"
+                "description": " - Topik LIFE"
             },
             {
                 "command": "/get_past",
-                "description": "Topik PAST"
+                "description": " - Topik PAST"
             },
             {
                 "command": "/get_random",
-                "description": "Topik RANDOM"
+                "description": " - Topik RANDOM"
             },
             {
                 "command": "/get_relation",
-                "description": "Topik RELATIONSHIP"
+                "description": " - Topik RELATIONSHIP"
             },
             {
                 "command": "/get_about",
-                "description": "Topik ABOUT YOU"
+                "description": " - Topik ABOUT YOU"
+            },
+            {
+                "command": "/about",
+                "description": "Mengenai Bot"
+            },
+            {
+                "command": "/saran",
+                "description": "Cara kirim saran"
             }
         ],
         "x": 300,
@@ -3913,8 +3936,8 @@
             }
         ],
         "language": "none",
-        "x": 1230,
-        "y": 280,
+        "x": 1050,
+        "y": 320,
         "wires": [
             [
                 "4e90cf28044b9b48"
@@ -3925,14 +3948,14 @@
         "id": "305e3a705544e3db",
         "type": "function",
         "z": "6c2a20878ada2fb9",
-        "name": "function 1",
-        "func": "var questionList = msg.payload.content.split(/\\r?\\n/);\nvar len = questionList.length;\nvar rndNum = Math.floor(Math.random() * len);\nvar question = questionList[rndNum].split(\"; \");\nmsg.payload = \"  [ \" + question[0] + \" ]\\n\" + question[1];\nreturn msg;",
+        "name": "get question",
+        "func": "var questionList = msg.payload.split(/\\r?\\n/);\nvar len = questionList.length;\nvar rndNum = Math.floor(Math.random() * len);\nvar question = questionList[rndNum].split(\"; \");\nmsg.payload = \"  [ \" + question[0] + \" ]\\n\" + question[1];\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1060,
+        "x": 910,
         "y": 280,
         "wires": [
             [
@@ -3945,7 +3968,7 @@
         "type": "file in",
         "z": "6c2a20878ada2fb9",
         "name": "qst-life",
-        "filename": "rekata_questions\\life.txt",
+        "filename": "./rekata_questions/life.txt",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -3965,7 +3988,7 @@
         "type": "file in",
         "z": "6c2a20878ada2fb9",
         "name": "qst-past",
-        "filename": "C:\\Users\\User\\Documents\\RAKA\\rekata_questions\\past.txt",
+        "filename": "./rekata_questions/past.txt",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -3985,7 +4008,7 @@
         "type": "file in",
         "z": "6c2a20878ada2fb9",
         "name": "qst-random",
-        "filename": "C:\\Users\\User\\Documents\\RAKA\\rekata_questions\\random.txt",
+        "filename": "./rekata_questions/random.txt",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -4005,7 +4028,7 @@
         "type": "file in",
         "z": "6c2a20878ada2fb9",
         "name": "qst-relationship",
-        "filename": "C:\\Users\\User\\Documents\\RAKA\\rekata_questions\\relationship.txt",
+        "filename": "./rekata_questions/relationship.txt",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -4024,15 +4047,15 @@
         "id": "f38cb07da7d914d9",
         "type": "chatbot-message",
         "z": "6c2a20878ada2fb9",
-        "name": "",
+        "name": "about bot",
         "message": [
             {
-                "message": "Maaf, perintah tidak tersedia."
+                "message": " [ReKata Bot]\nBot ini menyediakan kumpulan pertanyaan yang dapat mendekatkan diri dengan lawan bicara dalam obrolan, terinspirasi 'intimacy deck' (party card).\n \n--= WARNING =--\nBeberapa pertanyaan terlaluertanyaan yang tersedia tidak disarankan untuk anak-anak.\n\n[ver 0.1.1 20220827]\n- Perbaikan framework dan server.\n- Perubahan metode penyimpanan pertanyaan.\n\n[ver 0.1.0]\n- Memasukkan 5 topik (25 soal / topik).\n- Penambahan fitur kirim saran."
             }
         ],
         "language": "none",
-        "x": 670,
-        "y": 540,
+        "x": 680,
+        "y": 720,
         "wires": [
             [
                 "4e90cf28044b9b48"
@@ -4044,7 +4067,7 @@
         "type": "file in",
         "z": "6c2a20878ada2fb9",
         "name": "qst-about_you",
-        "filename": "C:\\Users\\User\\Documents\\RAKA\\rekata_questions\\about_you.txt",
+        "filename": "./rekata_questions/about_you.txt",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -4055,8 +4078,7 @@
         "y": 220,
         "wires": [
             [
-                "aa3889072d58b130",
-                "ad43c2619233a665"
+                "aa3889072d58b130"
             ]
         ]
     },
@@ -4065,7 +4087,7 @@
         "type": "file in",
         "z": "6c2a20878ada2fb9",
         "name": "qst-life",
-        "filename": "C:\\Users\\User\\Documents\\RAKA\\rekata_questions\\life.txt",
+        "filename": "./rekata_questions/life.txt",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -4076,8 +4098,7 @@
         "y": 60,
         "wires": [
             [
-                "aa3889072d58b130",
-                "ad43c2619233a665"
+                "aa3889072d58b130"
             ]
         ]
     },
@@ -4086,7 +4107,7 @@
         "type": "file in",
         "z": "6c2a20878ada2fb9",
         "name": "qst-past",
-        "filename": "C:\\Users\\User\\Documents\\RAKA\\rekata_questions\\past.txt",
+        "filename": "./rekata_questions/past.txt",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -4097,8 +4118,7 @@
         "y": 100,
         "wires": [
             [
-                "aa3889072d58b130",
-                "ad43c2619233a665"
+                "aa3889072d58b130"
             ]
         ]
     },
@@ -4107,7 +4127,7 @@
         "type": "file in",
         "z": "6c2a20878ada2fb9",
         "name": "qst-random",
-        "filename": "C:\\Users\\User\\Documents\\RAKA\\rekata_questions\\random.txt",
+        "filename": "./rekata_questions/random.txt",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -4118,8 +4138,7 @@
         "y": 140,
         "wires": [
             [
-                "aa3889072d58b130",
-                "ad43c2619233a665"
+                "aa3889072d58b130"
             ]
         ]
     },
@@ -4128,7 +4147,7 @@
         "type": "file in",
         "z": "6c2a20878ada2fb9",
         "name": "qst-relationship",
-        "filename": "C:\\Users\\User\\Documents\\RAKA\\rekata_questions\\relationship.txt",
+        "filename": "./rekata_questions/relationship.txt",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -4139,8 +4158,7 @@
         "y": 180,
         "wires": [
             [
-                "aa3889072d58b130",
-                "ad43c2619233a665"
+                "aa3889072d58b130"
             ]
         ]
     },
@@ -4164,11 +4182,10 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1010,
+        "x": 890,
         "y": 100,
         "wires": [
             [
-                "ec22b0959c46e4c5",
                 "305e3a705544e3db"
             ]
         ]
@@ -4191,39 +4208,88 @@
         "wires": []
     },
     {
-        "id": "6c527702807bb0ac",
-        "type": "debug",
-        "z": "6c2a20878ada2fb9",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "c33cc0f8f745e0cf",
+        "id": "a19e8127ce1912a3",
         "type": "chatbot-message",
         "z": "6c2a20878ada2fb9",
-        "name": "question",
+        "name": "cara saran",
         "message": [
             {
-                "message": "ABOUT YOU; Apa sarapan kesukaanmu? Kenapa?\nABOUT YOU; Selain kebutuhan pokok, dalam hal apa kamu tidak ragu untuk menghabiskan uang?\nABOUT YOU; Jenis hadiah apa yang paling kamu suka?\nABOUT YOU; Menurutmu apa yang menjadi nilai terbaikku?\nABOUT YOU; Menurutmu apa yang menjadi nilai terburukku?\nABOUT YOU; Apa dari hidupanmu yang tidak akan kamu ubah demi siapa pun?\nABOUT YOU; Kapan kamu menyadari bahwa aku orang yang cocok denganmu?\nABOUT YOU; Dalam hal apa kamu merasa kurang dihargai olehku atau orang lain?\nABOUT YOU; Jika aku bertanya kepada sahabatmu dulu mengenai karakter burukmu, apa yang akan mereka katakan?\nABOUT YOU; Hal apa tentangku yang ingin lebih kamu tau atau membuatmu penasaran?\nABOUT YOU; Apa yang kamu perajari tentang keuangan dari orang tuamu?\nABOUT YOU; Apa yang membuatmu merasa sangat kompeten?\nABOUT YOU; Hubungan siapa yang membuatmu terinspirasi atau ingin kamu hindari? Jelaskan.\nABOUT YOU; Apa 'Culture Shock' terbesarmu?\nABOUT YOU; Ketika apa kamu merasa sangat 'insecure'?\nABOUT YOU; Kebohongan apa yang selalu kamu katakan hingga kamu merasa itu nyata?\nABOUT YOU; Kamu merasa cenderung ke konservatif, moderat, liberal dalam politik? Jelaskan.\nABOUT YOU; Pernahkah merasa cemburu ketika aku terlihat lebih akrab dengan orang lain?\nABOUT YOU; Perhatian seperti apa yang kamu harapkan ketika kamu sakit?\nABOUT YOU; Antara 1~10, seberapa berantakan kamu?\nABOUT YOU; Sebagai orang tua, kamu akan mengambil peran ditakuti (jahat) atau dipercaya (baik)? Jelaskan.\nABOUT YOU; Jelaskan bagaimana kamu menghabiskan akhir pekan yang sempurna?\nABOUT YOU; Jika kamu tiba-tiba mendapatkan 3 kemampuan, kemampuan apa itu?\nABOUT YOU; Apa yang membuatmu marah dan bagaimana kamu mengatasi kemarahanmu?\nABOUT YOU; Jelaskan sesuatu yang menarik dalam hidupmu saat ini?"
+                "message": " --= Mohon Tidak Spam =--\nUntuk mengirimkan saran, gunakan format berikut :\n\n/kirim_saran [(username)] (saran)\n\ncth : /kirim_saran [rekata] Tolong tambahkan pertanyaan. Aku punya banyak ide pertanyaan."
             }
         ],
         "language": "none",
-        "x": 420,
-        "y": 500,
+        "x": 690,
+        "y": 520,
         "wires": [
             [
-                "305e3a705544e3db",
-                "6c527702807bb0ac"
+                "4e90cf28044b9b48"
             ]
         ]
+    },
+    {
+        "id": "dd7a39c88ba438b1",
+        "type": "chatbot-message",
+        "z": "6c2a20878ada2fb9",
+        "name": "reply kirim saran",
+        "message": [
+            {
+                "message": "Terima kasih, saran anda telah terkirim."
+            }
+        ],
+        "language": "none",
+        "x": 700,
+        "y": 660,
+        "wires": [
+            [
+                "4e90cf28044b9b48"
+            ]
+        ]
+    },
+    {
+        "id": "1aa8346ac6e2b64e",
+        "type": "chatbot-conversation",
+        "z": "6c2a20878ada2fb9",
+        "name": "",
+        "botDevelopment": "c940c4049c9e1049",
+        "botProduction": "",
+        "chatId": "1828978251",
+        "userId": "",
+        "transport": "telegram",
+        "x": 730,
+        "y": 620,
+        "wires": [
+            [
+                "632a9a1dd8b5c7a2"
+            ]
+        ]
+    },
+    {
+        "id": "026b2914b29c0d4d",
+        "type": "function",
+        "z": "6c2a20878ada2fb9",
+        "name": "get saran",
+        "func": "var rawSaran = msg.payload.content.replace(\"/kirim_saran\", \"\");\nmsg.payload = \"  [ \" + msg.payload.userId + \" ]\\n\" + rawSaran;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 580,
+        "wires": [
+            [
+                "1aa8346ac6e2b64e"
+            ]
+        ]
+    },
+    {
+        "id": "3838ed393e10ddb7",
+        "type": "comment",
+        "z": "6c2a20878ada2fb9",
+        "name": "token",
+        "info": "1911727921:AAEYXqf0ViIim6UtNP-h51pVQ7SzJAmjoaM",
+        "x": 110,
+        "y": 200,
+        "wires": []
     }
 ]
