@@ -642,6 +642,7 @@
         "id": "c940c4049c9e1049",
         "type": "chatbot-telegram-node",
         "botname": "ReKata",
+        "token": "1911727921:AAEYXqf0ViIim6UtNP-h51pVQ7SzJAmjoaM",
         "usernames": "",
         "polling": "1000",
         "store": "",
@@ -653,7 +654,7 @@
         "storeMessages": true,
         "enableMissionControl": false,
         "inspectMessages": true,
-        "chatbotId": ""
+        "chatbotId": "1911727921:AAEYXqf0ViIim6UtNP-h51pVQ7SzJAmjoaM"
     },
     {
         "id": "5eb0bd6b.74b794",
