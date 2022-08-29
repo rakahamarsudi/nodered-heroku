@@ -19,7 +19,7 @@ var path = require('path');
 var when = require('when');
 
 process.env.HOSTNAME = require('os').hostname();
-//process.env.BOT_TOKEN = "2097247350:AAHvGZR34e34Y0MjKtvFRFLs1qcysirD2rA";
+process.env.BOT_TOKEN = "1911727921:AAEYXqf0ViIim6UtNP-h51pVQ7SzJAmjoaM";
 //... useless... use Config Vars in Heroku Dashboard | Settings, instead!
 
 /**
