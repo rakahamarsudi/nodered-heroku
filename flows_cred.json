@@ -1,5 +1,4 @@
 {
-    "a8d2d040.73334": {},
     "01b856875e0d074d": {},
     "0c550dcd627c0c5f": {
         "password": "${NETATMO_BEARER}"
@@ -21,5 +20,8 @@
     "2bb8dfa0.48854": {
         "user": "${ATLAS_USERNAME}",
         "password": "${ATLAS_PASSWORD}"
+    },
+    "227839c5a19f7b4b": {
+        "token": "5556270358:AAFA21MZG4ReHDwIp5DWnCdaY-VSO8dlahE"
     }
 }
