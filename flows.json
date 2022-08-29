@@ -46,6 +46,14 @@
         "env": []
     },
     {
+        "id": "e899286ccebc8c74",
+        "type": "tab",
+        "label": "tanyakrab_bot",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "2924702c.b33a7",
         "type": "subflow",
         "name": "ui-table handler",
@@ -654,6 +662,30 @@
         "enableMissionControl": false,
         "inspectMessages": true,
         "chatbotId": ""
+    },
+    {
+        "id": "227839c5a19f7b4b",
+        "type": "telegram bot",
+        "botname": "Tanya Akrab",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
     },
     {
         "id": "5eb0bd6b.74b794",
@@ -4291,5 +4323,615 @@
         "x": 110,
         "y": 200,
         "wires": []
+    },
+    {
+        "id": "fb9902a34548e51f",
+        "type": "telegram command",
+        "z": "e899286ccebc8c74",
+        "name": "get_life",
+        "command": "/get_life",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "227839c5a19f7b4b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 130,
+        "y": 300,
+        "wires": [
+            [
+                "4e9dbeadf5b9f33c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4e9dbeadf5b9f33c",
+        "type": "file in",
+        "z": "e899286ccebc8c74",
+        "name": "qst-life",
+        "filename": "./rekata_questions/life.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "ebe4871a4bfab859"
+            ]
+        ]
+    },
+    {
+        "id": "5d1c15528a429a99",
+        "type": "function",
+        "z": "e899286ccebc8c74",
+        "name": "get question",
+        "func": "var questionList = msg.payload.split(/\\r?\\n/);\nvar len = questionList.length;\nvar rndNum = Math.floor(Math.random() * len);\nvar question = questionList[rndNum].split(\"; \");\nmsg.payload = {\"content\":\"  [ \" + question[0] + \" ]\\n\" + question[1]};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 400,
+        "wires": [
+            [
+                "4a0403aa8d5a27fa",
+                "ea63b6765c8cc51e"
+            ]
+        ]
+    },
+    {
+        "id": "ae1d48a226af6d13",
+        "type": "telegram sender",
+        "z": "e899286ccebc8c74",
+        "name": "sender",
+        "bot": "227839c5a19f7b4b",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a0403aa8d5a27fa",
+        "type": "join",
+        "z": "e899286ccebc8c74",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 910,
+        "y": 400,
+        "wires": [
+            [
+                "ae1d48a226af6d13",
+                "378e7df5d0e0becf"
+            ]
+        ]
+    },
+    {
+        "id": "22c28f084669231b",
+        "type": "debug",
+        "z": "e899286ccebc8c74",
+        "name": "read input",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "378e7df5d0e0becf",
+        "type": "debug",
+        "z": "e899286ccebc8c74",
+        "name": "read output",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ea63b6765c8cc51e",
+        "type": "debug",
+        "z": "e899286ccebc8c74",
+        "name": "read result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e323d4507dfce392",
+        "type": "file in",
+        "z": "e899286ccebc8c74",
+        "name": "qst-about_you",
+        "filename": "./rekata_questions/about_you.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 380,
+        "y": 480,
+        "wires": [
+            [
+                "ebe4871a4bfab859"
+            ]
+        ]
+    },
+    {
+        "id": "c8191044b5de6a0d",
+        "type": "file in",
+        "z": "e899286ccebc8c74",
+        "name": "qst-past",
+        "filename": "./rekata_questions/past.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 360,
+        "y": 360,
+        "wires": [
+            [
+                "ebe4871a4bfab859"
+            ]
+        ]
+    },
+    {
+        "id": "9213c35522093ebd",
+        "type": "file in",
+        "z": "e899286ccebc8c74",
+        "name": "qst-random",
+        "filename": "./rekata_questions/random.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 370,
+        "y": 400,
+        "wires": [
+            [
+                "ebe4871a4bfab859"
+            ]
+        ]
+    },
+    {
+        "id": "eb5b8a0ba4651d66",
+        "type": "file in",
+        "z": "e899286ccebc8c74",
+        "name": "qst-relationship",
+        "filename": "./rekata_questions/relationship.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 380,
+        "y": 440,
+        "wires": [
+            [
+                "ebe4871a4bfab859"
+            ]
+        ]
+    },
+    {
+        "id": "716f0cdaa78279e2",
+        "type": "telegram command",
+        "z": "e899286ccebc8c74",
+        "name": "get_past",
+        "command": "/get_past",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "227839c5a19f7b4b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "c8191044b5de6a0d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "10709db733839af7",
+        "type": "telegram command",
+        "z": "e899286ccebc8c74",
+        "name": "get_random",
+        "command": "/get_random",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "227839c5a19f7b4b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "9213c35522093ebd"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4c2cdde1f1bfd654",
+        "type": "telegram command",
+        "z": "e899286ccebc8c74",
+        "name": "get_relation",
+        "command": "/get_relation",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "227839c5a19f7b4b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 150,
+        "y": 480,
+        "wires": [
+            [
+                "eb5b8a0ba4651d66"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3b32f147948cfd71",
+        "type": "telegram command",
+        "z": "e899286ccebc8c74",
+        "name": "get_about",
+        "command": "/get_about",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "227839c5a19f7b4b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 140,
+        "y": 540,
+        "wires": [
+            [
+                "e323d4507dfce392"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4fe5fc2863a0243b",
+        "type": "telegram command",
+        "z": "e899286ccebc8c74",
+        "name": "get_all",
+        "command": "/get_all",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "227839c5a19f7b4b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "4e9dbeadf5b9f33c",
+                "c8191044b5de6a0d",
+                "9213c35522093ebd",
+                "eb5b8a0ba4651d66",
+                "e323d4507dfce392"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ebe4871a4bfab859",
+        "type": "join",
+        "z": "e899286ccebc8c74",
+        "name": "collect lib",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "1",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "5d1c15528a429a99",
+                "22c28f084669231b"
+            ]
+        ]
+    },
+    {
+        "id": "0500b4c348c8f979",
+        "type": "telegram receiver",
+        "z": "e899286ccebc8c74",
+        "name": "Receiver",
+        "bot": "227839c5a19f7b4b",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "b568da2416d01f2b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b568da2416d01f2b",
+        "type": "change",
+        "z": "e899286ccebc8c74",
+        "name": "clear content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 340,
+        "wires": [
+            [
+                "4a0403aa8d5a27fa"
+            ]
+        ]
+    },
+    {
+        "id": "2fbe2527189c9459",
+        "type": "telegram command",
+        "z": "e899286ccebc8c74",
+        "name": "about",
+        "command": "/about",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "227839c5a19f7b4b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "ca0eeb23e3a55e0d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f6262812154fd7ae",
+        "type": "telegram command",
+        "z": "e899286ccebc8c74",
+        "name": "saran",
+        "command": "/saran",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "227839c5a19f7b4b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 130,
+        "y": 680,
+        "wires": [
+            [
+                "b1ccade22192dd01"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0d1c0f3d72b79582",
+        "type": "telegram command",
+        "z": "e899286ccebc8c74",
+        "name": "kirim_saran",
+        "command": "/kirim_saran",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "227839c5a19f7b4b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 150,
+        "y": 740,
+        "wires": [
+            [
+                "0637625798593e60",
+                "3da65ed135f6936f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0637625798593e60",
+        "type": "change",
+        "z": "e899286ccebc8c74",
+        "name": "send saran",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload.content",
+                "pt": "msg",
+                "from": "/kirim_saran",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "1828978251",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 720,
+        "wires": [
+            [
+                "ae1d48a226af6d13"
+            ]
+        ]
+    },
+    {
+        "id": "3da65ed135f6936f",
+        "type": "function",
+        "z": "e899286ccebc8c74",
+        "name": "reply saran",
+        "func": "msg.payload.content = \"Terima kasih.\\n Pesan anda telah terkirim\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600.765625,
+        "y": 839.5,
+        "wires": [
+            [
+                "ae1d48a226af6d13"
+            ]
+        ]
+    },
+    {
+        "id": "b1ccade22192dd01",
+        "type": "function",
+        "z": "e899286ccebc8c74",
+        "name": "cara saran",
+        "func": "msg.payload.content = \" --= Mohon Tidak Spam =--\\n\" +\n    \"Untuk mengirimkan saran, gunakan format berikut :\\n\" +\n    \"/kirim_saran [<username>] <saran>\\n\\n\"+\n    \"cth : /kirim_saran [rekata] Tolong tambahkan pertanyaan. Aku punya banyak ide pertanyaan.\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 660,
+        "wires": [
+            [
+                "ae1d48a226af6d13"
+            ]
+        ]
+    },
+    {
+        "id": "ca0eeb23e3a55e0d",
+        "type": "function",
+        "z": "e899286ccebc8c74",
+        "name": "about bot",
+        "func": "msg.payload.content = \" [Tanya Akrab Bot]\\n\"+\n    \"Bot ini menyediakan kumpulan pertanyaan yang dapat mendekatkan diri dengan lawan bicara dalam obrolan, terinspirasi 'intimacy deck' (party card).\\n\" +\n    \"   --= WARNING =-- Beberapa pertanyaan yang tersedia tidak disarankan untuk anak-anak.\\n\" +\n    \"\\n\\n build : 20220829\\n\\n\"\n    \"[ver 0.2.0]\\n - Perubahan library.\\n\" +\n    \"[ver 0.1.1]\\n - Perbaikan framework dan server.\\n - Perubahan metode penyimpanan pertanyaan.\\n\" +\n    \"[ver 0.1.0]\\n - Memasukkan 5 topik (25 soal / topik).\\n - Penambahan fitur kirim saran.\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 600,
+        "wires": [
+            [
+                "ae1d48a226af6d13"
+            ]
+        ]
     }
 ]
