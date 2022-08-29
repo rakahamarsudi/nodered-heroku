@@ -4082,7 +4082,7 @@
         "name": "about bot",
         "message": [
             {
-                "message": " [ReKata Bot]\nBot ini menyediakan kumpulan pertanyaan yang dapat mendekatkan diri dengan lawan bicara dalam obrolan, terinspirasi 'intimacy deck' (party card).\n \n--= WARNING =--\nBeberapa pertanyaan terlaluertanyaan yang tersedia tidak disarankan untuk anak-anak.\n\n[ver 0.1.1 20220827]\n- Perbaikan framework dan server.\n- Perubahan metode penyimpanan pertanyaan.\n\n[ver 0.1.0]\n- Memasukkan 5 topik (25 soal / topik).\n- Penambahan fitur kirim saran."
+                "message": " [ReKata Bot]\nBot ini menyediakan kumpulan pertanyaan yang dapat mendekatkan diri dengan lawan bicara dalam obrolan, terinspirasi 'intimacy deck' (party card).\n \n--= WARNING =--\nBeberapa pertanyaan yang tersedia tidak disarankan untuk anak-anak.\n\n[ver 0.1.1 20220827]\n- Perbaikan framework dan server.\n- Perubahan metode penyimpanan pertanyaan.\n\n[ver 0.1.0]\n- Memasukkan 5 topik (25 soal / topik).\n- Penambahan fitur kirim saran."
             }
         ],
         "language": "none",
@@ -4920,7 +4920,7 @@
         "type": "function",
         "z": "e899286ccebc8c74",
         "name": "about bot",
-        "func": "msg.payload.content = \" [Tanya Akrab Bot]\\n\"+\n    \"Bot ini menyediakan kumpulan pertanyaan yang dapat mendekatkan diri dengan lawan bicara dalam obrolan, terinspirasi 'intimacy deck' (party card).\\n\" +\n    \"   --= WARNING =-- Beberapa pertanyaan yang tersedia tidak disarankan untuk anak-anak.\\n\" +\n    \"\\n\\n build : 20220829\\n\\n\"\n    \"[ver 0.2.0]\\n - Perubahan library.\\n\" +\n    \"[ver 0.1.1]\\n - Perbaikan framework dan server.\\n - Perubahan metode penyimpanan pertanyaan.\\n\" +\n    \"[ver 0.1.0]\\n - Memasukkan 5 topik (25 soal / topik).\\n - Penambahan fitur kirim saran.\";\nreturn msg;",
+        "func": "msg.payload.content = \" [Tanya Akrab Bot]\\n\"+\n    \"Bot ini menyediakan kumpulan pertanyaan yang dapat mendekatkan diri dengan lawan bicara dalam obrolan, terinspirasi 'intimacy deck' (party card).\\n\" +\n    \"   --= WARNING =--\n Beberapa pertanyaan yang tersedia tidak disarankan untuk anak-anak.\\n\" +\n    \"\\n\\n build : 20220829\\n\\n\"\n    \"[ver 0.2.0]\\n - Perubahan library.\\n\" +\n    \"[ver 0.1.1]\\n - Perbaikan framework dan server.\\n - Perubahan metode penyimpanan pertanyaan.\\n\" +\n    \"[ver 0.1.0]\\n - Memasukkan 5 topik (25 soal / topik).\\n - Penambahan fitur kirim saran.\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
