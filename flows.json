@@ -4341,7 +4341,7 @@
         "removeregexcommand": false,
         "outputs": 2,
         "x": 130,
-        "y": 300,
+        "y": 260,
         "wires": [
             [
                 "4e9dbeadf5b9f33c"
@@ -4362,7 +4362,7 @@
         "encoding": "utf8",
         "allProps": false,
         "x": 350,
-        "y": 320,
+        "y": 280,
         "wires": [
             [
                 "ebe4871a4bfab859"
@@ -4381,11 +4381,10 @@
         "finalize": "",
         "libs": [],
         "x": 750,
-        "y": 400,
+        "y": 360,
         "wires": [
             [
-                "4a0403aa8d5a27fa",
-                "ea63b6765c8cc51e"
+                "4a0403aa8d5a27fa"
             ]
         ]
     },
@@ -4398,7 +4397,7 @@
         "haserroroutput": false,
         "outputs": 1,
         "x": 1030,
-        "y": 560,
+        "y": 540,
         "wires": [
             []
         ]
@@ -4424,11 +4423,10 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 910,
-        "y": 400,
+        "y": 360,
         "wires": [
             [
-                "ae1d48a226af6d13",
-                "378e7df5d0e0becf"
+                "ae1d48a226af6d13"
             ]
         ]
     },
@@ -4436,17 +4434,17 @@
         "id": "22c28f084669231b",
         "type": "debug",
         "z": "e899286ccebc8c74",
-        "name": "read input",
+        "name": "read original",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
+        "complete": "originalMessage",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
-        "y": 140,
+        "x": 650,
+        "y": 840,
         "wires": []
     },
     {
@@ -4462,8 +4460,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 870,
-        "y": 220,
+        "x": 910,
+        "y": 740,
         "wires": []
     },
     {
@@ -4496,7 +4494,7 @@
         "encoding": "utf8",
         "allProps": false,
         "x": 380,
-        "y": 480,
+        "y": 440,
         "wires": [
             [
                 "ebe4871a4bfab859"
@@ -4516,7 +4514,7 @@
         "encoding": "utf8",
         "allProps": false,
         "x": 360,
-        "y": 360,
+        "y": 320,
         "wires": [
             [
                 "ebe4871a4bfab859"
@@ -4536,7 +4534,7 @@
         "encoding": "utf8",
         "allProps": false,
         "x": 370,
-        "y": 400,
+        "y": 360,
         "wires": [
             [
                 "ebe4871a4bfab859"
@@ -4556,7 +4554,7 @@
         "encoding": "utf8",
         "allProps": false,
         "x": 380,
-        "y": 440,
+        "y": 400,
         "wires": [
             [
                 "ebe4871a4bfab859"
@@ -4580,7 +4578,7 @@
         "removeregexcommand": false,
         "outputs": 2,
         "x": 140,
-        "y": 360,
+        "y": 320,
         "wires": [
             [
                 "c8191044b5de6a0d"
@@ -4605,7 +4603,7 @@
         "removeregexcommand": false,
         "outputs": 2,
         "x": 150,
-        "y": 420,
+        "y": 380,
         "wires": [
             [
                 "9213c35522093ebd"
@@ -4630,7 +4628,7 @@
         "removeregexcommand": false,
         "outputs": 2,
         "x": 150,
-        "y": 480,
+        "y": 440,
         "wires": [
             [
                 "eb5b8a0ba4651d66"
@@ -4655,7 +4653,7 @@
         "removeregexcommand": false,
         "outputs": 2,
         "x": 140,
-        "y": 540,
+        "y": 500,
         "wires": [
             [
                 "e323d4507dfce392"
@@ -4680,7 +4678,7 @@
         "removeregexcommand": false,
         "outputs": 2,
         "x": 130,
-        "y": 240,
+        "y": 200,
         "wires": [
             [
                 "4e9dbeadf5b9f33c",
@@ -4713,11 +4711,10 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 580,
-        "y": 400,
+        "y": 360,
         "wires": [
             [
-                "5d1c15528a429a99",
-                "22c28f084669231b"
+                "5d1c15528a429a99"
             ]
         ]
     },
@@ -4730,7 +4727,7 @@
         "saveDataDir": "",
         "filterCommands": false,
         "x": 580,
-        "y": 320,
+        "y": 280,
         "wires": [
             [
                 "b568da2416d01f2b"
@@ -4758,7 +4755,7 @@
         "to": "",
         "reg": false,
         "x": 750,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "4a0403aa8d5a27fa"
@@ -4781,8 +4778,8 @@
         "useregex": false,
         "removeregexcommand": false,
         "outputs": 2,
-        "x": 130,
-        "y": 620,
+        "x": 470,
+        "y": 640,
         "wires": [
             [
                 "ca0eeb23e3a55e0d"
@@ -4806,8 +4803,8 @@
         "useregex": false,
         "removeregexcommand": false,
         "outputs": 2,
-        "x": 130,
-        "y": 680,
+        "x": 470,
+        "y": 700,
         "wires": [
             [
                 "b1ccade22192dd01"
@@ -4831,50 +4828,14 @@
         "useregex": false,
         "removeregexcommand": false,
         "outputs": 2,
-        "x": 150,
-        "y": 740,
+        "x": 490,
+        "y": 760,
         "wires": [
             [
-                "0637625798593e60",
-                "3da65ed135f6936f"
+                "3da65ed135f6936f",
+                "77d6d5ba1c2f6efd"
             ],
             []
-        ]
-    },
-    {
-        "id": "0637625798593e60",
-        "type": "change",
-        "z": "e899286ccebc8c74",
-        "name": "send saran",
-        "rules": [
-            {
-                "t": "change",
-                "p": "payload.content",
-                "pt": "msg",
-                "from": "/kirim_saran",
-                "fromt": "str",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.chatId",
-                "pt": "msg",
-                "to": "1828978251",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 610,
-        "y": 720,
-        "wires": [
-            [
-                "ae1d48a226af6d13"
-            ]
         ]
     },
     {
@@ -4888,8 +4849,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600.765625,
-        "y": 839.5,
+        "x": 730,
+        "y": 780,
         "wires": [
             [
                 "ae1d48a226af6d13"
@@ -4901,14 +4862,14 @@
         "type": "function",
         "z": "e899286ccebc8c74",
         "name": "cara saran",
-        "func": "msg.payload.content = \" --= Mohon Tidak Spam =--\\n\" +\n    \"Untuk mengirimkan saran, gunakan format berikut :\\n\" +\n    \"/kirim_saran [<username>] <saran>\\n\\n\"+\n    \"cth : /kirim_saran [rekata] Tolong tambahkan pertanyaan. Aku punya banyak ide pertanyaan.\";\nreturn msg;",
+        "func": "msg.payload.content = \" --= Mohon Tidak Spam =--\\n\" +\n    \"Untuk mengirimkan saran, gunakan format berikut :\\n\" +\n    \"/kirim_saran <saran>\\n\\n\"+\n    \"cth : /kirim_saran Tolong tambahkan topik pertanyaannya.\\nAku punya banyak ide pertanyaan.\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
-        "y": 660,
+        "x": 750,
+        "y": 680,
         "wires": [
             [
                 "ae1d48a226af6d13"
@@ -4920,17 +4881,99 @@
         "type": "function",
         "z": "e899286ccebc8c74",
         "name": "about bot",
-        "func": "msg.payload.content = \" [Tanya Akrab Bot]\\n\"+\n    \"Bot ini menyediakan kumpulan pertanyaan yang dapat mendekatkan diri dengan lawan bicara dalam obrolan, terinspirasi 'intimacy deck' (party card).\\n\" +\n    \"   --= WARNING =--\n Beberapa pertanyaan yang tersedia tidak disarankan untuk anak-anak.\\n\" +\n    \"\\n\\n build : 20220829\\n\\n\"\n    \"[ver 0.2.0]\\n - Perubahan library.\\n\" +\n    \"[ver 0.1.1]\\n - Perbaikan framework dan server.\\n - Perubahan metode penyimpanan pertanyaan.\\n\" +\n    \"[ver 0.1.0]\\n - Memasukkan 5 topik (25 soal / topik).\\n - Penambahan fitur kirim saran.\";\nreturn msg;",
+        "func": "msg.payload.content = \" [Tanya Akrab Bot]\\n\"+\n    \"Bot ini menyediakan kumpulan pertanyaan yang dapat mendekatkan diri dengan lawan bicara dalam obrolan, terinspirasi 'intimacy deck' (party card).\\n\" +\n    \"   --= WARNING =--\\n\" +\n    \"Beberapa pertanyaan yang tersedia tidak disarankan untuk anak-anak.\\n\" +\n    \"\\n\\n build : 20220830\\n\\n\" +\n    \"[ver 0.2.1]\\n - Fix bug.\\n - Perbaikan diksi pertanyaan.\\n\\n\" +\n    \"[ver 0.2.0]\\n - Perubahan library.\\n\\n\" +\n    \"[ver 0.1.1]\\n - Perbaikan framework dan server.\\n - Perubahan metode penyimpanan pertanyaan.\\n\\n\" +\n    \"[ver 0.1.0]\\n - Memasukkan 5 topik (25 soal / topik).\\n - Penambahan fitur kirim saran.\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 600,
+        "x": 740,
+        "y": 620,
         "wires": [
             [
                 "ae1d48a226af6d13"
+            ]
+        ]
+    },
+    {
+        "id": "d1434d5fd81e16eb",
+        "type": "debug",
+        "z": "e899286ccebc8c74",
+        "name": "read input",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "77d6d5ba1c2f6efd",
+        "type": "function",
+        "z": "e899286ccebc8c74",
+        "name": "send saran",
+        "func": "var saran = \n    \"[\" + msg.originalMessage.from.username + \"]\\n\" +\n    \"[\" + msg.originalMessage.from.id + \"]\\n\\n\" +\n    msg.payload.content;\nmsg.payload.content = saran;\nmsg.payload.chatId = \"1828978251\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 740,
+        "wires": [
+            [
+                "ae1d48a226af6d13"
+            ]
+        ]
+    },
+    {
+        "id": "82f3b584074b421b",
+        "type": "telegram command",
+        "z": "e899286ccebc8c74",
+        "name": "start",
+        "command": "/start",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "227839c5a19f7b4b",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 470,
+        "y": 580,
+        "wires": [
+            [
+                "167a1336b336f07c",
+                "22c28f084669231b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "167a1336b336f07c",
+        "type": "function",
+        "z": "e899286ccebc8c74",
+        "name": "greeting",
+        "func": "msg.payload.content = \n    \"Halo, \" + msg.originalMessage.from.first_name +\n    \"\\nTerima kasih telah bersedia mencoba Bot ini.\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 560,
+        "wires": [
+            [
+                "ae1d48a226af6d13",
+                "378e7df5d0e0becf"
             ]
         ]
     }
