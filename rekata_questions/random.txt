@@ -1,4 +1,4 @@
-RANDOM; Apa lima hal yang ada di daftar keinginanmu?
+RANDOM; Apa 5 hal yang ada di daftar keinginanmu?
 RANDOM; Apa perjalanan favoritmu bersamaku? kenapa?
 RANDOM; Apa yang paling kamu benci ketika aku memboncengmu?
 RANDOM; Apa perilaku diriku yang bisa membuatmu 'gila'?
@@ -9,9 +9,9 @@ RANDOM; Sebutkan satu hal dalam daftar keinginanmu yang dapat kita lakukan dalam
 RANDOM; Target apa yang kamu miliki? Bagaimana aku bisa mendukungmu dalam mencapainya?
 RANDOM; Jika aku merasa tidak berkenan dengan perkataan / perilakumu, bagaimana cara terbaik untuk menegurmu?
 RANDOM; Bagaimana cara aku membuatmu lebih nyaman dalam hubungan kita kedepannya?
-RANDOM; Katakan target / impian pribadimu yang belum pernah kamu katakan padaku.
+RANDOM; Sebutkan target / impian pribadimu yang belum pernah kamu katakan padaku.
 RANDOM; Apa sesuatu yang tidak pernah kamu akui pada siapa pun?
-RANDOM; Ingatkah kamu apa yang aku kenakan ketika kita bertemu?
+RANDOM; Ingatkah kamu apa yang aku kenakan ketika kita pertama kali bertemu?
 RANDOM; Sebutkan satu hal yang aku lakukan hingga membuatmu senang dalam seminggu terakhir.
 RANDOM; Antara 1~10, seberapa gugup dirimu jika aku melihat isi HPmu?
 RANDOM; Menurutmu hewan apa yang menggambarkan dirimu? Apa alasannya?
@@ -21,5 +21,5 @@ RANDOM; Apa kesan pertamamu terhadapku?
 RANDOM; Satu hal apa yang kamu harapkan akan menjadi lebih baik di tahun depan?
 RANDOM; Apa yang pertama kami membuatmu tertarik kepadaku?
 RANDOM; Seperti apa rencana lima tahunmu?
-RANDOM; Apayang kesan pertamamu padaku yang ternyata itu salah?
-RANDOM; Di antara kita siapa yang akan paling disiplin dan tegas?
+RANDOM; Apa kesan pertamamu padaku yang ternyata itu salah?
+RANDOM; Di antara kita, siapa yang akan paling disiplin dan tegas?
