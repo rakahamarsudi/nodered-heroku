@@ -762,8 +762,7 @@
         "wires": [
             [
                 "9c09e087.a48e7",
-                "62f9eddeac70ae91",
-                "4f7225cf4c5b17b7"
+                "62f9eddeac70ae91"
             ]
         ]
     },
@@ -841,7 +840,7 @@
         "type": "debug",
         "z": "3c1975f87cd0cabf",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -877,7 +876,7 @@
         "type": "debug",
         "z": "3c1975f87cd0cabf",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1154,7 +1153,7 @@
         "type": "debug",
         "z": "3c1975f87cd0cabf",
         "name": "Name File",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1171,7 +1170,7 @@
         "type": "debug",
         "z": "3c1975f87cd0cabf",
         "name": "Name GET",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1181,23 +1180,6 @@
         "statusType": "auto",
         "x": 1050,
         "y": 140,
-        "wires": []
-    },
-    {
-        "id": "4f7225cf4c5b17b7",
-        "type": "debug",
-        "z": "3c1975f87cd0cabf",
-        "name": "Header GET",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "headers",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1070,
-        "y": 220,
         "wires": []
     },
     {
@@ -4453,7 +4435,7 @@
         "type": "debug",
         "z": "e899286ccebc8c74",
         "name": "read original",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4931,6 +4913,25 @@
         "wires": []
     },
     {
+        "id": "77d6d5ba1c2f6efd",
+        "type": "function",
+        "z": "e899286ccebc8c74",
+        "name": "send saran",
+        "func": "var saran = \n    \"[\" + msg.originalMessage.from.username + \"]\\n\" +\n    \"[\" + msg.originalMessage.from.id + \"]\\n\\n\" +\n    msg.payload.content;\nmsg.payload.content = saran;\nmsg.payload.chatId = \"1828978251\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 740,
+        "wires": [
+            [
+                "ae1d48a226af6d13"
+            ]
+        ]
+    },
+    {
         "id": "82f3b584074b421b",
         "type": "telegram command",
         "z": "e899286ccebc8c74",
@@ -4951,8 +4952,7 @@
         "wires": [
             [
                 "167a1336b336f07c",
-                "22c28f084669231b",
-                "93e12050c6216f80"
+                "22c28f084669231b"
             ],
             []
         ]
@@ -4974,44 +4974,6 @@
             [
                 "ae1d48a226af6d13",
                 "378e7df5d0e0becf"
-            ]
-        ]
-    },
-    {
-        "id": "77d6d5ba1c2f6efd",
-        "type": "function",
-        "z": "e899286ccebc8c74",
-        "name": "send saran",
-        "func": "var saran = \n    \"[\" + msg.originalMessage.from.username + \"]\\n\" +\n    \"[\" + msg.originalMessage.from.id + \"]\\n\\n\" +\n    msg.payload.content;\nmsg.payload.content = saran;\nmsg.payload.chatId = \"1828978251\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 730,
-        "y": 740,
-        "wires": [
-            [
-                "ae1d48a226af6d13"
-            ]
-        ]
-    },
-    {
-        "id": "93e12050c6216f80",
-        "type": "function",
-        "z": "e899286ccebc8c74",
-        "name": "commers",
-        "func": "var commer = \n    msg.originalMessage.from.id + \" - \" + msg.originalMessage.from.username + \"\\n\" +\n    msg.originalMessage.from.first_name + \" \" + msg.originalMessage.from.last_name +\n    \"\\n\\nMulai tertarik dengan Tanya Akrab Bot.\";\nmsg.payload.content = commer;\nmsg.payload.chatId = \"1828978251\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 740,
-        "y": 520,
-        "wires": [
-            [
-                "ae1d48a226af6d13"
             ]
         ]
     }
