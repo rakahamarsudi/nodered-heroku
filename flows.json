@@ -4426,7 +4426,8 @@
         "y": 360,
         "wires": [
             [
-                "ae1d48a226af6d13"
+                "ae1d48a226af6d13",
+                "b9babc84859d369a"
             ]
         ]
     },
@@ -4477,8 +4478,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 870,
-        "y": 180,
+        "x": 1270,
+        "y": 240,
         "wires": []
     },
     {
@@ -4974,6 +4975,143 @@
             [
                 "ae1d48a226af6d13",
                 "378e7df5d0e0becf"
+            ]
+        ]
+    },
+    {
+        "id": "1b0586da6a0f0df0",
+        "type": "jimp-image",
+        "z": "e899286ccebc8c74",
+        "name": "",
+        "data": "payload.path",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "FONT_SANS_64_BLACK",
+        "parameter1Type": "jimpFont",
+        "parameter2": "50",
+        "parameter2Type": "num",
+        "parameter3": "-50",
+        "parameter3Type": "num",
+        "parameter4": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+        "parameter4Type": "str",
+        "parameter5": "HORIZONTAL_ALIGN_CENTER",
+        "parameter5Type": "AlignX",
+        "parameter6": "VERTICAL_ALIGN_MIDDLE",
+        "parameter6Type": "AlignY",
+        "parameter7": "1200",
+        "parameter7Type": "num",
+        "parameter8": "",
+        "parameter8Type": "auto",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 8,
+        "jimpFunction": "print2",
+        "selectedJimpFunction": {
+            "name": "print aligned",
+            "fn": "print",
+            "description": "Print text to the image",
+            "parameters": [
+                {
+                    "name": "font|str",
+                    "type": "jimpFont",
+                    "required": true,
+                    "hint": "font to print. NOTE: This can be one of the presets or the path to a fnt file"
+                },
+                {
+                    "name": "x",
+                    "type": "num",
+                    "required": true,
+                    "hint": "x coordinate to print text"
+                },
+                {
+                    "name": "y",
+                    "type": "num",
+                    "required": true,
+                    "hint": "y coordinate to print text"
+                },
+                {
+                    "name": "text",
+                    "group": "options",
+                    "type": "str",
+                    "required": true,
+                    "hint": "text to print"
+                },
+                {
+                    "name": "alignmentX",
+                    "group": "options",
+                    "type": "AlignX",
+                    "required": false,
+                    "hint": "X Alignment"
+                },
+                {
+                    "name": "alignmentY",
+                    "group": "options",
+                    "type": "AlignY",
+                    "required": false,
+                    "hint": "Y Alignment"
+                },
+                {
+                    "name": "maxWidth",
+                    "type": "auto|num",
+                    "required": false,
+                    "hint": "wrap text at maxWidth"
+                },
+                {
+                    "name": "maxHeight",
+                    "type": "auto|num",
+                    "required": false,
+                    "hint": "max height"
+                }
+            ]
+        },
+        "x": 1110,
+        "y": 360,
+        "wires": [
+            [
+                "a5c358eff9054584"
+            ]
+        ]
+    },
+    {
+        "id": "a5c358eff9054584",
+        "type": "image viewer",
+        "z": "e899286ccebc8c74",
+        "name": "image result",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 1350,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9babc84859d369a",
+        "type": "change",
+        "z": "e899286ccebc8c74",
+        "name": "image path",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.path",
+                "pt": "msg",
+                "to": "./makrab_card/int_card.jpg",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 280,
+        "wires": [
+            [
+                "1b0586da6a0f0df0",
+                "ea63b6765c8cc51e"
             ]
         ]
     }
