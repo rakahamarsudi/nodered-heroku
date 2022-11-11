@@ -43,6 +43,8 @@
         "node-red-contrib-virtual-smart-home":"latest",
         "node-red-contrib-web-worldmap":"latest",
         "node-red-contrib-image-tools":"latest",
+        "node-red-contrib-firebase-messaging":"latest",
+        "node-red-contrib-loop-processing":"latest",
         "redis": "3.0.2",
         "when": "3.7.8"
     }
